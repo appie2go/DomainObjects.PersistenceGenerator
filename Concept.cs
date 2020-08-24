@@ -119,18 +119,8 @@ namespace FunAndGames
                 .AddMembers(
                     CreateMapMethod(), 
                     CreateApplyMethod()
-                    //, CreateMapDomainObjectMethod()
                 );
         }
-
-        // private MethodDeclarationSyntax CreateMapDomainObjectMethod()
-        // {           
-        //     // Create an abstract method to map the entity class to a domain object
-        //     return SyntaxFactory.MethodDeclaration(SyntaxFactory.ParseTypeName(_source.ToString()), "Map")
-        //         .AddModifiers(SyntaxFactory.Token(SyntaxKind.PublicKeyword), SyntaxFactory.Token(SyntaxKind.AbstractKeyword))
-        //         .AddParameterListParameters(SyntaxFactory.Parameter(SyntaxFactory.Identifier("domainObject")).WithType(SyntaxFactory.ParseTypeName(_targetTableName)))
-        //         .WithSemicolonToken(SyntaxFactory.Token(SyntaxKind.SemicolonToken));
-        // }
 
         private MethodDeclarationSyntax CreateMapMethod()
         {
