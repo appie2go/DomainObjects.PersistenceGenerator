@@ -1,0 +1,14 @@
+<Project>
+    <ItemGroup>
+        <Compile Remove="*.repository.cs" />
+        <Compile Include="*.repository.cs">
+            <DesignTime>True</DesignTime>
+            <AutoGen>True</AutoGen>
+            <DependentUpon>%(Filename)</DependentUpon>
+        </Compile>
+    </ItemGroup>
+    <UsingTask TaskName="DomainDrivenDesign.DomainObjects.Persistence.CodeGeneratorTask" AssemblyFile="sut/DomainDrivenDesign.DomainObjects.Persistence.dll" />
+    <Target Name="Test" AfterTargets="BeforeBuild">
+        <CodeGeneratorTask />
+    </Target>
+</Project>
